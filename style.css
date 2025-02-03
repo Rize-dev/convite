@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Buka Bird';
+    src: url('fonts/Buka Bird.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #87CEEB; /* Azul claro para combinar com o tema */
+    font-family: 'Buka Bird', cursive;
+}
+
+/* Estilos da tela inicial */
+.invite-container {
+    position: relative;
+    text-align: center;
+}
+
+.invite {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+h1 {
+    font-size: 36px;
+    color: #FF69B4; /* Rosa */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 24px;
+    color: #333;
+}
+
+.bow {
+    width: 100px;
+    height: 100px;
+    background: url('images/bow.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite; /* Animação de pulsar */
+}
+
+.bow:hover {
+    animation: none; /* Para a animação ao passar o mouse */
+    transform: translateX(-50%) scale(1.2);
+}
+
+@keyframes pulse {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.1); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+/* Estilos da tela principal */
+header {
+    text-align: center;
+}
+
+.stitch-image {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.back-button {
+    font-family: 'Buka Bird', cursive;
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #FF1493;
+}
+
+#countdown {
+    font-size: 24px;
+    margin-top: 20px;
+}

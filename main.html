@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festa do Stitch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à festa do Stitch!</h1>
+        <img src="images/stitch.png" alt="Stitch" class="stitch-image">
+        <button onclick="goBack()" class="back-button">Voltar</button>
+    </header>
+
+    <section id="sobre">
+        <h2>Data: 25/10/2023</h2>
+        <h2>Hora: 15:00</h2>
+        <h2>Local: Minha Casa</h2>
+        <div id="countdown"></div>
+    </section>
+
+    <audio id="backgroundMusic" loop>
+        <source src="sounds/stitch-theme.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        // Toca a música ao carregar a tela principal
+        window.onload = function() {
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            backgroundMusic.play();
+        };
+
+        function goBack() {
+            window.location.href = "index.html"; // Volta para a tela inicial
+        }
+    </script>
+</body>
+</html>
