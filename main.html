@@ -89,6 +89,16 @@
             startCountdown();
         };
 
+        function confirmarPresenca() {
+            const nome = prompt("Por favor, insira seu nome:");
+            if (nome) {
+                const telefone = "5543991900405"; // Substitua pelo seu número de telefone
+                const mensagem = `${nome}, confirmou sua presença`;
+                const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+                window.open(url, '_blank');
+            }
+        }
+
         function goBack() {
             window.location.href = "index.html"; // Volta para a tela inicial
         }
