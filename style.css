@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Buka Bird';
-    src: url('fonts/Buka Bird.ttf') format('truetype');
+    src: url('Fontes/Buka\ Bird.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
     font-family: 'Buka Bird', cursive;
-    background: url('https://m.media-amazon.com/images/I/71LJSaWksmL._AC_UF894,1000_QL80_.jpg');
+    background-image: url(Assets/ponto-de-espiar-simples-avanltuitbywoc3a.webp) ;
     color: black;
     text-align: center;
     background-repeat: no-repeat;
@@ -39,16 +39,6 @@ button:hover {
     background-color: #FF1493;
 }
 
-body {
-  
-    font-family: 'Waltograph', cursive;
-    background: url('https://m.media-amazon.com/images/I/71LJSaWksmL._AC_UF894,1000_QL80_.jpg');
-    color: black;
-    text-align: center;
-  background-repeat: no-repeat;
-   background-size: cover;
-  
-}
 h1, h2, button {
     font-family: 'Waltograph', cursive !important;
 }
@@ -79,4 +69,3 @@ button:hover {
     font-size: 24px;
     margin-top: 20px;
 }
-background: url('https://topobolo.com/wp-content/uploads/2024/05/topobolo-stitch-aniversario11.png'!important);
