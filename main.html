@@ -52,24 +52,19 @@
         }
 
         #countdown {
-            position: fixed;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
             color: white;
             font-size: 18px; /* Diminuir o tamanho do texto */
             background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 10px;
             animation: countdownAnimation 1s infinite;
-            z-index: 1000; /* Garante que o contador fique acima de outros elementos */
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
-    <div id="countdown"></div>
-
     <header>
         <h1>Você está convidado para o meu aniversário!</h1>
     </header>
@@ -83,6 +78,8 @@
 
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2182.827697423788!2d-51.02201012928033!3d-23.05811615106623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb4a9a691a4a37%3A0xd451b356a01abdaa!2sR.%20Pref.%20Benedito%20da%20Silva%20Giglio%2C%20Sertan%C3%B3polis%20-%20PR%2C%2086170-000!5e0!3m2!1spt-BR!2sbr!4v1738703880541!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
+
+    <div id="countdown"></div>
 
     <audio id="backgroundMusic" autoplay loop>
         <source src="sounds/parabens.mp3" type="audio/mpeg">
