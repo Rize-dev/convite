@@ -4,44 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-                
     <title>Convite de Aniversário - Stitch</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes moveUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes textAnimation {
+            0% { color: #ff0000; }
+            25% { color: #00ff00; }
+            50% { color: #0000ff; }
+            75% { color: #ff00ff; }
+            100% { color: #ff0000; }
+        }
+
+        @keyframes confetti {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+
+        @keyframes countdownAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        h1, h2 {
+            animation: textAnimation 3s infinite;
+        }
+
+        #aniversariostitch {
+            animation: moveUpDown 2s infinite;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            animation: confetti 5s linear infinite;
+        }
+
+        #countdown {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 18px; /* Diminuir o tamanho do texto */
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+            animation: countdownAnimation 1s infinite;
+            z-index: 1000; /* Garante que o contador fique acima de outros elementos */
+        }
+    </style>
 </head>
 
+<body>
+    <div id="countdown"></div>
+
     <header>
-        <h1>Voce esta convidado para o meu aniversario!</h1>
-        <img src="https://img1.picmix.com/output/stamp/thumb/5/9/1/0/2410195_8fe13.gif" alt="Stitch" class="stitch-image"><br>
-        <button onclick="confirmarPresenca()">Clique aqui para confirmar presença</button>
+        <h1>Você está convidado para o meu aniversário!</h1>
     </header>
 
     <section id="sobre">
+        <img id="aniversariostitch" src="Assets/pngegg.png" alt=""> <br>
+        <button onclick="confirmarPresenca()">Clique aqui para confirmar presença</button>
         <h2>Data: 22/02/2025</h2>
-        <h2>Hora: 15:00</h2>
-        <h2>Local: </h2>
-        <div id="countdown"></div>
+        <h2>Hora: Deixar seu pequeno/a as 15:00 e pegar as 19:00</h2>
+        <h2>Local: Rua Benedito Silva Giglio N°400 Jardim Soriani</h2>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2182.827697423788!2d-51.02201012928033!3d-23.05811615106623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb4a9a691a4a37%3A0xd451b356a01abdaa!2sR.%20Pref.%20Benedito%20da%20Silva%20Giglio%2C%20Sertan%C3%B3polis%20-%20PR%2C%2086170-000!5e0!3m2!1spt-BR!2sbr!4v1738703880541!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
-    <audio id="backgroundMusic" loop>
-        <source src="sounds/stitch-theme.mp3" type="audio/mpeg">
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="sounds/parabens.mp3" type="audio/mpeg">
         Seu navegador não suporta o elemento de áudio.
     </audio>
-
+     
     <script src="script.js"></script>
     <script>
         // Toca a música ao carregar a tela principal
         window.onload = function() {
             const backgroundMusic = document.getElementById('backgroundMusic');
             backgroundMusic.play();
+            createConfetti();
+            startCountdown();
         };
 
         function goBack() {
             window.location.href = "index.html"; // Volta para a tela inicial
         }
+
+        function createConfetti() {
+            const confettiContainer = document.createElement('div');
+            confettiContainer.style.position = 'absolute';
+            confettiContainer.style.top = '0';
+            confettiContainer.style.left = '0';
+            confettiContainer.style.width = '100%';
+            confettiContainer.style.height = '100%';
+            confettiContainer.style.pointerEvents = 'none';
+            document.body.appendChild(confettiContainer);
+
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confettiContainer.appendChild(confetti);
+            }
+        }
+
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            const eventDate = new Date('2025-02-22T15:00:00').getTime();
+
+            const interval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `Dias que faltam para meu aniversário: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = "O evento começou!";
+                }
+            }, 1000);
+        }
     </script>
 </body>
 </html>
-
-
-
