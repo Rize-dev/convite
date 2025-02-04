@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Buka Bird', cursive;
+    font-family: 'Buka Bird' !important;
     background-image: url(Assets/ponto-de-espiar-simples-avanltuitbywoc3a.webp) ;
     color: black;
     text-align: center;
@@ -24,7 +24,6 @@ h2 {
 }
 
 button {
-    font-family: 'Buka Bird', cursive;
     background-color: #FF69B4;
     color: white;
     border: none;
@@ -39,9 +38,7 @@ button:hover {
     background-color: #FF1493;
 }
 
-h1, h2, button {
-    font-family: 'Waltograph', cursive !important;
-}
+
 header {
     padding: 20px;
 }
