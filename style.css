@@ -6,69 +6,54 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #87CEEB; /* Azul claro para combinar com o tema */
     font-family: 'Buka Bird', cursive;
-}
-
-/* Estilos da tela inicial */
-.invite-container {
-    position: relative;
+    background: url('https://m.media-amazon.com/images/I/71LJSaWksmL._AC_UF894,1000_QL80_.jpg');
+    color: black;
     text-align: center;
-}
-
-.invite {
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+h2 {
     font-size: 36px;
-    color: #FF69B4; /* Rosa */
-    margin-bottom: 10px;
 }
 
-p {
+button {
+    font-family: 'Buka Bird', cursive;
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     font-size: 24px;
-    color: #333;
-}
-
-.bow {
-    width: 100px;
-    height: 100px;
-    background: url('images/bow.png') no-repeat center center;
-    background-size: contain;
-    position: absolute;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
     cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: pulse 2s infinite; /* Animação de pulsar */
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
-.bow:hover {
-    animation: none; /* Para a animação ao passar o mouse */
-    transform: translateX(-50%) scale(1.2);
+button:hover {
+    background-color: #FF1493;
 }
 
-@keyframes pulse {
-    0% { transform: translateX(-50%) scale(1); }
-    50% { transform: translateX(-50%) scale(1.1); }
-    100% { transform: translateX(-50%) scale(1); }
-}
-
-/* Estilos da tela principal */
-header {
+body {
+  
+    font-family: 'Waltograph', cursive;
+    background: url('https://m.media-amazon.com/images/I/71LJSaWksmL._AC_UF894,1000_QL80_.jpg');
+    color: black;
     text-align: center;
+  background-repeat: no-repeat;
+   background-size: cover;
+  
+}
+h1, h2, button {
+    font-family: 'Waltograph', cursive !important;
+}
+header {
+    padding: 20px;
 }
 
 .stitch-image {
@@ -76,8 +61,7 @@ header {
     margin-top: 20px;
 }
 
-.back-button {
-    font-family: 'Buka Bird', cursive;
+button {
     background-color: #FF69B4;
     color: white;
     border: none;
@@ -85,10 +69,9 @@ header {
     font-size: 20px;
     cursor: pointer;
     border-radius: 10px;
-    margin-top: 20px;
 }
 
-.back-button:hover {
+button:hover {
     background-color: #FF1493;
 }
 
@@ -96,3 +79,4 @@ header {
     font-size: 24px;
     margin-top: 20px;
 }
+background: url('https://topobolo.com/wp-content/uploads/2024/05/topobolo-stitch-aniversario11.png'!important);

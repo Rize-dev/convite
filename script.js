@@ -1,6 +1,6 @@
 // Contagem regressiva para a tela principal
 const countdown = document.getElementById('countdown');
-const eventDate = new Date('2023-10-25T15:00:00').getTime();
+const eventDate = new Date('2025-02-22T15:00:00').getTime();
 
 const interval = setInterval(() => {
     const now = new Date().getTime();
